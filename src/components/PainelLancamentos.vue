@@ -13,13 +13,13 @@
         />
 
         <label for="descricao">Descrição</label>
-        <input
-          type="text"
+        <textarea class="text-area"
+          type="text-area"
           name="descricao"
           id="descricao"
           required
           v-model="descricao"
-        />
+            />
 
         <label for="data">Data</label>
         <input type="date" name="data" id="data" required v-model="data" />
@@ -34,6 +34,14 @@
         :lancamento="lancamento"
       />
     </div>
+    <div>
+     <PainelResumo 
+     :titulo="titulo"
+     :descricao="descricao"
+     :data="data"
+     
+     />
+    </div>
   </div>
 </template>
 
@@ -41,6 +49,9 @@
 import { mapActions, mapState } from "vuex";
 import BlocoLancamento from "./BlocoLancamento.vue";
 import Lancamento from "../models/Lancamento";
+import PainelResumo from './PainelResumo.vue';
+
+
 
 export default {
   name: "PainelLancamentos",
@@ -53,7 +64,9 @@ export default {
   },
   components: {
     BlocoLancamento,
-  },
+    PainelResumo,
+    
+},
   computed: {
     ...mapState({
       lancamentos: (state) => state.moduloLancamentos.lancamentos,
@@ -69,7 +82,7 @@ export default {
       this.salvarLancamento(lancamento);
       this.limparFormulario();
     },
-
+    
     limparFormulario() {
       this.titulo = "";
       this.descricao = "";
@@ -97,6 +110,12 @@ input[type="date"],
 button {
   display: block;
   margin-bottom: 10px;
+}
+
+.text-area{
+  display: block;
+  flex-grow: 1;
+  padding-bottom: 10px;
 }
 
 #tiposLancamentos {

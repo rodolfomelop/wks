@@ -1,9 +1,9 @@
 <template>
   <div id="painelResumo">
     <div class="resumoTitulo">
-      <span class="titulo">Título</span>
-      <span class="descricao">Descrição</span>
-      <span class="data">Data</span>
+      <span class="titulo">{{titulo}}</span>
+      <span class="descricao">{{descricao}}</span>
+      <span class="data">{{data}}</span>
     </div>
   </div>
 </template>
@@ -13,6 +13,23 @@ import { mapGetters } from 'vuex';
 
 export default {
     name: "PainelResumo",
+
+    props: {
+      titulo: {
+        type: String,
+        required: true
+      },
+      descricao: {
+        type: String,
+        required: true
+      },
+      data: {
+        type: Date,
+        required: true
+      }
+
+
+    },
     computed: mapGetters([ ])
 }
 </script>
