@@ -36,7 +36,7 @@ export default {
 
 <style scoped>
 #painelResumo{
-  width: 60%;
+  width: 100%;
   padding: 10px;
   background-color: white;
   border-radius: 20px;

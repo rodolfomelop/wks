@@ -17,9 +17,13 @@ const actions = {
     commit("adicionarLancamento", lancamento);
   },
 
-  deletarLancamento: ({ commit }, index) => {
-    commit("deletar", index);
-  },
+  deletarLancamento: ({commit}, id) =>{
+    commit('deletarLancamento', id);
+  }
+
+  
+  
+  
   
 };
 
@@ -27,8 +31,8 @@ const mutations = {
   adicionarLancamento: (state, lancamento) =>
   state.lancamentos.unshift(lancamento),
 
-  deletar: (state, index) =>
-  state.lancamentos.slice(index,1)
+  deletarLancamento: (state, id) =>
+   state.lancamentos = state.lancamentos.filter(lancamento => lancamento.id !== id)
 };
 
 export default {

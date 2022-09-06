@@ -5,14 +5,14 @@
 
   <div id="container">
     <PainelLancamentos/>
-    <PainelResumo/>
+    <!-- <PainelResumo/> -->
   </div>
  </div>
 </template>
 
 <script>
 import PainelLancamentos from './components/PainelLancamentos.vue'
-import PainelResumo from './components/PainelResumo.vue'
+// import PainelResumo from './components/PainelResumo.vue'
 import Header from './components/Header.vue'
 import Marca from './components/Marca.vue'
 
@@ -20,7 +20,7 @@ import Marca from './components/Marca.vue'
 
 export default {
   name: 'App',
-  components: { Marca, Header, PainelResumo, PainelLancamentos }
+  components: { Marca, Header,  PainelLancamentos }
 }
 </script>
 

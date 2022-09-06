@@ -27,6 +27,16 @@
         <button>Postar</button>
       </form>
     </div>
+    <div id="painelResumo">
+      <div class="resumoTitulo">
+     <PainelResumo 
+     :titulo="titulo"
+     :descricao="descricao"
+     :data="data"
+     
+     />
+     </div>
+    </div>
     <div id="arealancamentos">
       <BlocoLancamento
         v-for="lancamento in lancamentos"
@@ -34,14 +44,7 @@
         :lancamento="lancamento"
       />
     </div>
-    <div>
-     <PainelResumo 
-     :titulo="titulo"
-     :descricao="descricao"
-     :data="data"
-     
-     />
-    </div>
+    
   </div>
 </template>
 
@@ -94,8 +97,9 @@ export default {
 
 <style scope>
 #painelLancamento {
-  width: 40%;
+  width: 90%;
   padding: 20px;
+ 
 }
 
 #formularioLancamento {
@@ -160,4 +164,15 @@ button {
 #arealancamentos {
   margin-top: 30px;
 }
+
+#painelResumo{
+
+  
+  padding: 20px;
+  display: flex-end;
+  text-align: center;
+  
+}
+
+
 </style>

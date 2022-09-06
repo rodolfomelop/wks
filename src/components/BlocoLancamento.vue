@@ -2,7 +2,7 @@
   <div class="blocoLancamento">
     <div class="botoes">
         <button class="botaoRemover"
-        @click="deletar(lancamento.id)">
+        @click="deletarLancamento(lancamento.id)">
             <img src="../img/lixeira.png" alt="Remover lançamento">
         </button>
     </div>
@@ -23,20 +23,16 @@ import { mapActions } from "vuex";
 export default {
   
 
-  ...mapActions(['deletarLancamento']),
+  
 
     name: "BlocoLancamento",
     props:{
         lancamento: Object,
     },
-    methods:{
+    methods: mapActions(["deletarLancamento"]),
       
-    deletar(index) {
-      console.log(index)
-       this.deletarLancamento(0);
-      
-    }
-    }
+   
+    
 }
 </script>
 
